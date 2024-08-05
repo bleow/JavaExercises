@@ -2,6 +2,7 @@ package com.exercises.collections_lists_maps.custom_comparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class CustomerApp {
@@ -23,8 +24,8 @@ public class CustomerApp {
         }
 
         // Sort the list of customers based on their name using the custom comparator
-        Collections.sort(customers, new CustomerNameComparator());
-//        customers.sort(Comparator.comparing(c -> c.getName())); // lambda version
+//        Collections.sort(customers, new CustomerNameComparator());
+        customers.sort(Comparator.comparing(c -> c.getName())); // lambda version
 //        customers.sort(Comparator.comparing(Customer::getName)); // method reference version
 
         // Print the list of customers after sorting
