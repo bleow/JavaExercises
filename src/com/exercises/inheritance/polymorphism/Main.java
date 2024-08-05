@@ -19,7 +19,7 @@ public class Main {
             System.out.println("Balance: " + account.getBalance());
             account.deposit(100.0);
             System.out.println("Balance after deposit: " + account.getBalance());
-            account.withdraw(600.0); // polymorphic call; code executed will depend on object being referred to
+            account.withdraw(60000.0); // polymorphic call; code executed will depend on object being referred to
             System.out.println("Balance after withdrawal: " + account.getBalance());
             System.out.println();
         }
