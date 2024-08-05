@@ -2,6 +2,7 @@ package com.exercises.collections_lists_maps.sorting;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class BankApp {
@@ -24,6 +25,10 @@ public class BankApp {
 
         // Sort the list of accounts based on balance
         Collections.sort(accounts);
+        // If the class had no compareTo method override, you will need to pass your own Comparator like so:
+        // Collections.sort(accounts, (a1, a2) -> Double.compare(a1.getBalance(), a2.getBalance()));
+        // Collections.sort(accounts, Comparator.comparingDouble(BankAccount::getBalance));
+
 
         // Print the list of accounts after sorting
         System.out.println("\nAccounts after sorting:");
