@@ -1,9 +1,9 @@
 package com.exercises.classes.more_aggregation;
 
 public class Loan {
-    private Customer customer;
-    private BankAccount account;
-    private double loanAmount;
+    private final Customer customer;
+    private final BankAccount account;
+    private final double loanAmount;
 
     public Loan(Customer customer, BankAccount account, double loanAmount) {
         this.customer = customer;
@@ -11,12 +11,14 @@ public class Loan {
         this.loanAmount = loanAmount;
     }
 
-    public void printLoanDetails() {
-        System.out.println("Loan Amount: " + loanAmount);
-        System.out.println("Customer ID: " + customer.getCustomerId());
-        System.out.println("Name: " + customer.getName());
-        System.out.println("Account Number: " + account.getAccountNumber());
-        System.out.println("Account Balance: " + account.getBalance());
+
+    @Override
+    public String toString() {
+        return "Loan Amount: " + loanAmount + "\n" +
+                "Customer ID: " + customer.getCustomerId() + "\n" +
+                "Name: " + customer.getName() + "\n" +
+                "Account Number: " + account.getAccountNumber() + "\n" +
+                "Account Balance: " + account.getBalance() + "\n";
     }
 
     public static void main(String[] args) {
@@ -24,7 +26,7 @@ public class Loan {
         BankAccount account = new BankAccount("123456", 1000.0);
         Loan loan = new Loan(customer, account, 5000.0);
 
-        loan.printLoanDetails();
+        System.out.println(loan);
     }
 }
 
