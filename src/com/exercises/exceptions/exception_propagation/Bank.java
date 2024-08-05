@@ -11,18 +11,18 @@ public class Bank {
     }
 
     public void performOperations() {
+        System.out.println("balance: " + account1.getBalance());
         try {
             depositToAccount(account1, 200.0);
             withdrawFromAccount(account1, 1500.0);  // This will throw an exception
         } catch (InsufficientFundsException e) {
             System.out.println("Handled at performOperations: " + e.getMessage());
         }
+        System.out.println("balance: " + account1.getBalance());
 
         try {
             transferFundsBetweenAccounts(account1, null, 300.0);  // This will throw an exception
-        } catch (InvalidAccountException e) {
-            System.out.println("Handled at performOperations: " + e.getMessage());
-        } catch (InsufficientFundsException e) {
+        } catch (InvalidAccountException | InsufficientFundsException e) {
             System.out.println("Handled at performOperations: " + e.getMessage());
         }
     }
