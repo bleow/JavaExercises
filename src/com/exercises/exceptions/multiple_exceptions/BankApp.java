@@ -23,6 +23,7 @@ public class BankApp {
 
         // Demonstrating transfer to invalid account
         try {
+            System.out.println("\nAttempting transfer of 100.0:");
             account1.transferFunds(null, 100.0);
         } catch (InsufficientFundsException | InvalidAccountException e) {
             System.out.println(e.getMessage());
@@ -30,6 +31,7 @@ public class BankApp {
 
         // Demonstrating transfer with insufficient funds
         try {
+            System.out.println("\nAttempting transfer of 1000.0:");
             account3.transferFunds(account2, 1000.0);
         } catch (InsufficientFundsException | InvalidAccountException e) {
             System.out.println(e.getMessage());
@@ -37,6 +39,7 @@ public class BankApp {
 
         // Demonstrating transfer with invalid amount
         try {
+            System.out.println("\nAttempting transfer of -50.0:");
             account1.transferFunds(account2, -50.0);
         } catch (InsufficientFundsException | InvalidAccountException e) {
             System.out.println(e.getMessage());
