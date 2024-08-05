@@ -1,14 +1,16 @@
 package com.exercises.classes.static_members;
 
 public class Customer {
-    private String customerId;
-    private String name;
-    private String address;
+    private final String customerId;
+    private final String name;
+    private final String address;
+    public static int customerCount = 0;
 
     public Customer(String customerId, String name, String address) {
         this.customerId = customerId;
         this.name = name;
         this.address = address;
+        customerCount++;
     }
 
     public String getCustomerId() {

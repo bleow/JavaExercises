@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Bank {
-    private List<Customer> customers;
+    private final List<Customer> customers;
     private static int totalCustomers = 0;
 
     public Bank() {
@@ -43,6 +43,7 @@ public class Bank {
 
         bank.printCustomers();
         System.out.println("Total Customers: " + Bank.getTotalCustomers());
+        System.out.println("in customer class: " + Customer.customerCount);
     }
 }
 
