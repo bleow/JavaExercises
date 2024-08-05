@@ -1,9 +1,9 @@
 package com.exercises.classes.aggregation;
 
 public class Customer {
-    private String customerId;
-    private String name;
-    private String address;
+    private final String customerId;
+    private final String name;
+    private final String address;
 
     public Customer(String customerId, String name, String address) {
         this.customerId = customerId;
